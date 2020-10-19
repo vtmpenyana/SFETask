@@ -3,8 +3,8 @@ import './App.css';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Particles from "react-tsparticles";
-import StudentCard from '../../components/StudentCard/StudentCard'
 import logo from './ilogo.png'
+import Portal from '../../components/Portal/Portal'
 
 const particlesOptions = {
   backgroundMode: {
@@ -170,6 +170,7 @@ function App() {
   // route-state
   const [route, setRoute] = useState('home')
 
+
   // user-state
   const [currentUser, setCurrentUser] = useState({})
 
@@ -177,22 +178,57 @@ function App() {
   const [students, setStudents] = useState([{
     name: 'admin',
     email: 'admin@task.com',
+    surname: 'undefined',
     id: 1234567890123,
-    homeAddress: 'test address'
-  }])
+    homeAddress: 'test address',
+    password: 'someHashStringHere'
+  },
+  {
+    name: 'student1',
+    email: 'student1@task.com',
+    surname: 'un',
+    id: 1234567890123,
+    homeAddress: 'test address',
+    password: 'someHashStringHere'
+  },
+  {
+    name: 'Three',
+    email: 'three@task.com',
+    surname: 'test',
+    id: 1234567890123,
+    homeAddress: 'test address',
+    password: 'someHashStringHere'
+  },
+  {
+    name: 'admin2',
+    email: 'admin2@task.com',
+    surname: 'undefined2',
+    id: 1234567890123,
+    homeAddress: 'test address',
+    password: 'someHashStringHere'
+  },
+])
 
   // basic routing logic
+if(route=== 'portal'){
+  return(
+    <Portal students={students}/>
+  )
+}
+else{
   return (route === 'home' || route === 'register')? (
     <div className="App">
     <img src={logo} alt='logo' />
-    <Register setRoute={setRoute} setCurrentUser={setCurrentUser}/>
+    <Register setRoute={setRoute} setStudents={setStudents} students={students} setCurrentUser={setCurrentUser} />
       <Particles
           id="tsparticles"
           options={particlesOptions}
         />
     </div>
-  ) :
-  (
+  )
+  
+  : 
+ (
     <div className="App">
     <img src={logo} alt='logo' />
     <Login setRoute={setRoute} setCurrentUser={setCurrentUser}/>
@@ -202,6 +238,7 @@ function App() {
         />
     </div>
   )
+}
 
 }
 

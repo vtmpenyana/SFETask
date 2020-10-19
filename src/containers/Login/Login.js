@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useState}from 'react'
 
 
-const Login = ({setRoute}) => {
+const Login = ({setRoute, setStudents, students}) => {
+    const [email, setemail] = useState('');
+    const [password, setPassword] = useState('');
     return(
         <div>
-            <article class="pa4 black-80">
+            <article class="pa4 black-80 mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
             <h1>Login</h1>
-            <form action="sign-up_submit" method="get" accept-charset="utf-8">
+            <form action="sign-up_submit" accept-charset="utf-8">
                 <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
                 <div class="mt3">
                     <label class="db fw4 lh-copy f6" for="email-address">Email address</label>
