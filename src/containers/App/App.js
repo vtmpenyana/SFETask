@@ -212,7 +212,11 @@ function App() {
   // basic routing logic
 if(route=== 'portal'){
   return(
-    <Portal students={students}/>
+    <div className='tc'>
+      <h1>{`Hello 
+      ${currentUser.name}`}</h1>
+      <Portal students={students}/>
+    </div>
   )
 }
 else{

@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 
 
 
-const Register = ({setRoute, setStudents, students, setIsLoginSuccess}) => {
+const Register = ({setRoute, setStudents, students, setCurrentUser}) => {
     const [name, setName] = useState('')
     const [surnname, setSurname] = useState('')
     const [email, setemail] = useState('')
@@ -24,6 +24,14 @@ const Register = ({setRoute, setStudents, students, setIsLoginSuccess}) => {
                 password,
                 homeAddress
             }])
+            setCurrentUser({
+                name,
+                surnname,
+                id,
+                email,
+                password,
+                homeAddress
+            })
         }
         else{
             alert("One or more fields not valid")
