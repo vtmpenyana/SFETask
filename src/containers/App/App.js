@@ -235,7 +235,7 @@ else{
  (
     <div className="App">
     <img src={logo} alt='logo' />
-    <Login setRoute={setRoute} setCurrentUser={setCurrentUser}/>
+    <Login setRoute={setRoute} setCurrentUser={setCurrentUser} students={students}/>
       <Particles
           id="tsparticles"
           options={particlesOptions}
