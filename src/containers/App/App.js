@@ -176,7 +176,7 @@ function App() {
 
   // mocking a users database
   const [students, setStudents] = useState([{
-    name: 'admin',
+    name: 'Gram',
     email: 'admin@task.com',
     surname: 'undefined',
     id: 1234567890123,
@@ -213,7 +213,7 @@ function App() {
 if(route=== 'portal'){
   return(
     <div className='tc'>
-      <h1>{`Hello 
+      <h1>{`hello 
       ${currentUser.name}`}</h1>
       <Portal setRoute={setRoute} students={students}/>
     </div>
