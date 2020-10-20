@@ -3,7 +3,7 @@ import StudentList from '../StudentList/StudentList'
 
 const Portal = ({students}) => {
     return(
-        <div>
+        <div className='tc'>
             <StudentList students={students} />
         </div>
     )
