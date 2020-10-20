@@ -32,17 +32,14 @@ const Register = ({setRoute, setStudents, students, setCurrentUser}) => {
                 password,
                 homeAddress
             })
-        }
-        else{
-            alert("One or more fields not valid")
-        }
+        }  
     }
 
     return(
         <div>
             <article class="pa4 black-80 mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
             <h1>Register</h1>
-            <form action="sign-up_submit" accept-charset="utf-8">
+            <div>
                 <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
                 <div class="mt3">
                     <label class="db fw4 lh-copy f6" for="email-address">Name</label>
@@ -73,11 +70,11 @@ const Register = ({setRoute, setStudents, students, setCurrentUser}) => {
                     <input onChange={(event) => setConfirmPassword(event.target.value)} class="pa2 input-reset ba bg-transparent w-100 measure" type="password" name="confirm-password"  id="confirm-password" />
                 </div>
                 </fieldset>
-                <div class="mt3"><input onClick={handleRegistration} class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Register" /></div>
+                <div class="mt3"><button onClick={handleRegistration} class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6">Register</button></div>
                 <a onClick={() => {
                     setRoute('login')
                     }} href="#0" class="f6 mt3 link dim black db">Login instead?</a>
-            </form>
+            </div>
             </article>
         </div>
     )

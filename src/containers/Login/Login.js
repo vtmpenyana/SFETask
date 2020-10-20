@@ -6,18 +6,20 @@ const Login = ({setRoute, setCurrentUser, students}) => {
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
-        students.forEach(student => {
-            if(student.email === email && student.password === password){
-                setRoute('portal')
-                setCurrentUser(student)
-            }
-        });
+        if(email.length > 0 && email.length > 0){
+            students.forEach(student => {
+                if(student.email === email && student.password === password){
+                    setRoute('portal')
+                    setCurrentUser(student)
+                }
+            });
+        }
     }
     return(
         <div>
             <article class="pa4 black-80 mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
             <h1>Login</h1>
-            <form action="sign-up_submit" accept-charset="utf-8">
+            <div>
                 <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
                 <div class="mt3">
                     <label class="db fw4 lh-copy f6" for="email-address">Email address</label>
@@ -32,7 +34,7 @@ const Login = ({setRoute, setCurrentUser, students}) => {
                 <button onClick={handleLogin} class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6">Login</button>
                 </div>
                 <a onClick={() => setRoute('register')} href="#0" class="f6 mt3 link dim black db">Register</a>
-            </form>
+            </div>
             </article>
         </div>
     )

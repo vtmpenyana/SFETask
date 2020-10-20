@@ -215,7 +215,7 @@ if(route=== 'portal'){
     <div className='tc'>
       <h1>{`Hello 
       ${currentUser.name}`}</h1>
-      <Portal students={students}/>
+      <Portal setRoute={setRoute} students={students}/>
     </div>
   )
 }
