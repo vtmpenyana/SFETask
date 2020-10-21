@@ -13,4 +13,4 @@
 
 ### You should see:
 
-	![alt screenshot](screenshot.jpg)
+![alt screenshot](screenshot.jpg)
