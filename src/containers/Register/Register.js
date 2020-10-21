@@ -14,6 +14,7 @@ const Register = ({setRoute, setStudents, students, setCurrentUser}) => {
 
     const handleRegistration = () => {
         // if all requirements(very basic) are met, route to the portal and add new user.
+        // Would make a post to a live database
         if((name.length !== 0) && (surnname.length !== 0) && (password === confirmPassword) && (id !== 0) && (email !== '') && (homeAddress !== '')){
             setRoute('portal')
             setStudents(students => [...students, {

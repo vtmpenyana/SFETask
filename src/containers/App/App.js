@@ -210,7 +210,7 @@ function App() {
 ])
 
   // basic routing logic
-if(route=== 'portal'){
+if(route === 'portal'){
   return(
     <div className='tc'>
       <h1>{`hello 
